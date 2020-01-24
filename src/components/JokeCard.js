@@ -26,9 +26,7 @@ const Wrapper = styled(Grid).attrs({
     z-index: 2;
   }
 `
-const Card = styled(Paper).attrs({
-  elevation: 2
-})`
+const Card = styled(Paper)`
   width: 6rem;
   height: 6rem;
   display: flex;
@@ -69,16 +67,7 @@ const CardBody = styled(Grid).attrs({
 `
 
 const JokeCard = ({ category, positionIndex }) => {
-  const { joke, fetchingJoke, setCategory, updateJoke } = useJoke()
-
-  const handleCardClick = () => {
-    const clickedSelectedCard = joke && joke.category
-    if (clickedSelectedCard) {
-      updateJoke()
-    } else {
-      setCategory(category)
-    }
-  }
+  const { joke, fetchingJoke, setCategory } = useJoke()
 
   const showingJoke = Boolean(joke)
   const isSelected = Boolean(joke && joke.category === category)
@@ -95,13 +84,18 @@ const JokeCard = ({ category, positionIndex }) => {
       className={wrapperClasses.join(' ')}
       transition-index={positionIndex}
     >
-      <Card onClick={handleCardClick}>
+      <Card
+        onClick={() => setCategory(category)}
+        elevation={isSelected ? 6 : 2}
+      >
         <CardHeader className={headerClasses.join(' ')}>
           <Typography>{category}</Typography>
         </CardHeader>
-        <CardBody>
-          <Typography>Lorem ipsum dolro sit amet</Typography>
-        </CardBody>
+        {isSelected ? (
+          <CardBody>
+            <Typography>{joke.text}</Typography>
+          </CardBody>
+        ) : null}
       </Card>
     </Wrapper>
   )

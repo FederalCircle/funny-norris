@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 
 import JokeCard from './JokeCard'
+import JokeActions from './JokeActions'
 
 const Wrapper = styled(Grid)`
   padding: 1rem;
@@ -35,6 +36,7 @@ const JokesCategories = () => {
           </JokeCardContainer>
         ))}
       </Grid>
+      <JokeActions />
     </Wrapper>
   )
 }
