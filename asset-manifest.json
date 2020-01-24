@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/funny-norris/static/css/main.461f2d62.chunk.css",
+    "main.js": "/funny-norris/static/js/main.718ee8ad.chunk.js",
+    "main.js.map": "/funny-norris/static/js/main.718ee8ad.chunk.js.map",
+    "runtime-main.js": "/funny-norris/static/js/runtime-main.2cb3f739.js",
+    "runtime-main.js.map": "/funny-norris/static/js/runtime-main.2cb3f739.js.map",
+    "static/js/2.7f93452d.chunk.js": "/funny-norris/static/js/2.7f93452d.chunk.js",
+    "static/js/2.7f93452d.chunk.js.map": "/funny-norris/static/js/2.7f93452d.chunk.js.map",
+    "index.html": "/funny-norris/index.html",
+    "precache-manifest.170362c7ecfc1bf2a96defec73ef8570.js": "/funny-norris/precache-manifest.170362c7ecfc1bf2a96defec73ef8570.js",
+    "service-worker.js": "/funny-norris/service-worker.js",
+    "static/css/main.461f2d62.chunk.css.map": "/funny-norris/static/css/main.461f2d62.chunk.css.map",
+    "static/js/2.7f93452d.chunk.js.LICENSE": "/funny-norris/static/js/2.7f93452d.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2cb3f739.js",
+    "static/js/2.7f93452d.chunk.js",
+    "static/css/main.461f2d62.chunk.css",
+    "static/js/main.718ee8ad.chunk.js"
+  ]
+}

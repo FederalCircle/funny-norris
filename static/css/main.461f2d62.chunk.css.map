@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,gBAGE,WACF,CAEA,MACE,YACF","file":"main.461f2d62.chunk.css","sourcesContent":["html,\nbody,\n#root {\n  height: 100%;\n}\n\n#root {\n  display: flex;\n}\n"]}
