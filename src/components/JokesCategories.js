@@ -6,8 +6,12 @@ import Typography from '@material-ui/core/Typography'
 import JokeCard from './JokeCard'
 import JokeActions from './JokeActions'
 
+import { useJoke } from '../context/joke-context'
+
 const Wrapper = styled(Grid)`
   padding: 1rem;
+  background-color: ${props => props['bg-color']};
+  transition: background-color 300ms ease-out;
 `
 
 const Title = styled(Typography)`
@@ -23,9 +27,13 @@ const JokeCardContainer = styled(Grid).attrs({
 `
 
 const JokesCategories = () => {
-  const categories = ['animal', 'career', 'celebrity', 'dev', 'fashion', 'food']
+  const { joke, categories } = useJoke()
   return (
-    <Wrapper container direction="column">
+    <Wrapper
+      container
+      direction="column"
+      bg-color={joke && joke.colors.background}
+    >
       <Grid item>
         <Title variant="h3">Funny Norris</Title>
       </Grid>

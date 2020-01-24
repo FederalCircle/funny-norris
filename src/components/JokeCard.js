@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography'
 // Others
 import { useJoke } from '../context/joke-context'
 import cardPositions from '../constants/cards-positions'
+import categoryColors from '../constants/category-colors'
 
 const Wrapper = styled(Grid).attrs({
   container: true,
@@ -26,6 +27,7 @@ const Wrapper = styled(Grid).attrs({
     z-index: 2;
   }
 `
+
 const Card = styled(Paper)`
   width: 6rem;
   height: 6rem;
@@ -47,7 +49,7 @@ const CardHeader = styled(Grid).attrs({
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: ${({ theme }) => theme.palette.primary.light};
+  background-color: ${props => props['bg-color']};
   transition: height 300ms ease-out;
   border-radius: 4px;
 
@@ -64,6 +66,14 @@ const CardBody = styled(Grid).attrs({
   alignItems: 'center'
 })`
   margin-top: 2rem;
+  padding: 1rem;
+  text-align: center;
+`
+
+const Title = styled(Typography)`
+  color: ${props => props['font-color']};
+  font-weight: 700;
+  text-transform: capitalize;
 `
 
 const JokeCard = ({ category, positionIndex }) => {
@@ -88,8 +98,11 @@ const JokeCard = ({ category, positionIndex }) => {
         onClick={() => setCategory(category)}
         elevation={isSelected ? 6 : 2}
       >
-        <CardHeader className={headerClasses.join(' ')}>
-          <Typography>{category}</Typography>
+        <CardHeader
+          className={headerClasses.join(' ')}
+          bg-color={categoryColors[category].primary}
+        >
+          <Title font-color={categoryColors[category].text}>{category}</Title>
         </CardHeader>
         {isSelected ? (
           <CardBody>
